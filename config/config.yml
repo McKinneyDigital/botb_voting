@@ -1,0 +1,20 @@
+defaults: &defaults
+  twilio:
+    sid: ACaca54dd95c75ef61a189293145f7a85a
+    token: 0b0d40286a8bd813e3cbde03340c11d1
+    number: 9197279946
+    version: 2008-08-01
+  admins:
+    - 9194497859
+    - 9103384984
+    - 9196234097
+    - 7575766376
+
+development: &development
+  <<: *defaults
+
+test:
+  <<: *development
+
+production:
+  <<: *defaults

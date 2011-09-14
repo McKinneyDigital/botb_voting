@@ -1,6 +1,11 @@
 BotbVoting::Application.routes.draw do
   
-  #resources :votes, collection => {:status => :get}
-  #resources :sms_votes
+  resources :votes do
+    collection do 
+      get 'status'
+    end
+  end
+  
+  resources :sms_votes
    
 end
