@@ -21,6 +21,6 @@ production:
   encoding: utf8
   reconnect: false
   database: trianglebattle_voting_2011
-  username: root
-  password:
+  username: trianglebattle
+  password: trianglebattle
   socket: /var/run/mysqld/mysqld.sock
