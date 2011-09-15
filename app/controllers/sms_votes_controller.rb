@@ -35,10 +35,10 @@ class SmsVotesController < ApplicationController
 
   def vote
     @vote = SmsVote.new :phone_number => params[:From], :message => params[:Body]
-    if Command.can_vote? && @vote.save
+    if @vote.save
       render :xml => Twilio::Verb.sms("You rock! Thanks for voting."), :status => 200
     else
-      render :text => Command.can_vote?, :status => 400
+      render :text => "", :status => 400
     end
   end
 end
