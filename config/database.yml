@@ -22,5 +22,5 @@ production:
   reconnect: false
   database: trianglebattle_voting_2011
   username: trianglebattle
-  password: trianglebattle
+  password: tr14nglebattle
   socket: /var/run/mysqld/mysqld.sock
