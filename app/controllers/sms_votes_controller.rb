@@ -1,5 +1,5 @@
 class SmsVotesController < ApplicationController
-  before_filter :require_twilio, :only => :create
+  before_filter :connect_twilio, :only => :create
 
   def create
     if CONFIG['admins'].include?(params[:From].to_i)

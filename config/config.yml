@@ -5,10 +5,9 @@ defaults: &defaults
     number: 9197279946
     version: 2008-08-01
   admins:
-    - 9194497859
     - 9103384984
     - 9196234097
-    - 7575766376
+    - 9192726865
 
 development: &development
   <<: *defaults
