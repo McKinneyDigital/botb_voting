@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110914205205) do
+ActiveRecord::Schema.define(:version => 20110915164519) do
 
   create_table "bands", :force => true do |t|
     t.integer  "code"
@@ -22,16 +22,16 @@ ActiveRecord::Schema.define(:version => 20110914205205) do
 
   create_table "commands", :force => true do |t|
     t.string   "instruction"
-    t.integer  "phone_number"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "phone_number"
   end
 
   create_table "votes", :force => true do |t|
-    t.integer  "phone_number"
     t.integer  "band_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "phone_number"
   end
 
 end
