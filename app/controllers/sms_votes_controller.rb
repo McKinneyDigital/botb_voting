@@ -2,7 +2,7 @@ class SmsVotesController < ApplicationController
   before_filter :connect_twilio, :only => :create
 
   def create
-    if CONFIG['admins'].include?(params[:From].to_i)
+    if APP_CONFIG['admins'].include?(params[:From].to_i)
       return if command
     end
     vote
@@ -18,7 +18,7 @@ class SmsVotesController < ApplicationController
     end
 
     digest = OpenSSL::Digest::Digest.new("sha1")
-    expected = Base64.encode64(OpenSSL::HMAC.digest(digest, CONFIG["twilio"]["token"], data)).strip
+    expected = Base64.encode64(OpenSSL::HMAC.digest(digest, APP_CONFIG["twilio"]["token"], data)).strip
     
     redirect_to votes_url unless request.headers["X-Twilio-Signature"] == expected
   end
