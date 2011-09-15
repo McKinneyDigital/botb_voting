@@ -2,7 +2,7 @@ class SmsVote < Vote
   include Sms
   include Bands
 
-  validates_candidate_code_presence_in :message
+  validates_band_code_presence_in :message
 
   def parse_message(str)
     cand = Band.find(:all).detect { |c| c if c.code_in?(str) }
