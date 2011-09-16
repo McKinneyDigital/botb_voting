@@ -18,7 +18,9 @@ $(function() {
           });
           if (total != 0) {
             $.each(data["bands"], function(key, value) {
-              $("#band-" + key).css('margin-top',(450 - (Math.round(value/total)) * 450) + "px");
+			  var percent = value/total;
+			  console.log(percent + " | " + Math.floor((450 - percent) * 450) + "px")
+              $("#band-" + key).css('margin-top', Math.floor((450 - percent) * 450) + "px");
             });
           }
         } else if (current_status == "on") {
