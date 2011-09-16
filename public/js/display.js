@@ -18,14 +18,12 @@ $(function() {
           });
           if (total != 0) {
             $.each(data["bands"], function(key, value) {
-              $("#band-" + key + " .percentage").html(Math.round((value/total*100)*100)/100 + "%");
-              $("#band-" + key + " .percentage").css({ bottom: (value/max*400) + "px" });
-              $("#band-" + key + " .bar").css({ height: (value/max)*400 + "px" });
+              $("#band-" + key).css({ marginTop: 450 - (Math.round((value/total*100)*100)/100) * 450) + "px"});
             });
           }
         } else if (current_status == "on") {
           current_status = "off";
-          $("#header").css({background:"url(/assets/images/off_state.jpg) no-repeat"});
+          // $("#header").css({background:"url(/assets/images/off_state.jpg) no-repeat"});
           $("#time-remaining").html("0");
           clearInterval(timer);
         } else {
