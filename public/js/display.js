@@ -1,5 +1,22 @@
 $(function() {
+	
   var current_status = "off";
+  var current_time = 10;
+
+  function handleTime(remaining) {
+    if(remaining != current_time) {
+	  if(remaining > 1) {
+	    $('#two-thru-ten').animate({ backgroundPosition: $('#two-thru-ten').css('background-position').split('px')[0] + 145 + 'px' }, 500);
+	  } else if (remaining == 1) {
+	    $('#two-thru-ten').remove();
+	    $('#time_remaining').css('background','url(/images/numbers/1min.png)');
+	  } else if (remaining < 1) {
+	    $('#time_remaining').css('background','url(/images/numbers/lessthan1.png)');
+	  }
+    }
+    current_time = remaining;
+  }
+  
 
   var timer = setInterval(function() {
     $.ajax({
@@ -9,8 +26,8 @@ $(function() {
       success: function(data) {
         if (data["status"] == "on") {
           current_status = "on";
-          $("#number").hide();
-          $("#time-remaining").html(parseInt(data["time_remaining"]) < 1 ? "<1" : data["time_remaining"]);
+		  handleTime( parseInt(data['time_remaining']) );
+		
           var total = data["total"];
           var max = 0;
           $.each(data["bands"], function(key, value) {

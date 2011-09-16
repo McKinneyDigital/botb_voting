@@ -22,7 +22,7 @@ class VotesController < ApplicationController
          result
        end
 
-       remaining = 15 - ((Time.now - last_d.created_at).round / 60)
+       remaining = 10 - ((Time.now - last_d.created_at).round / 60)
 
        render :json => {:status => "on", :time_remaining => remaining, :total => Vote.find(:all, :conditions => ["created_at >= ?", last_d.created_at]).count, :bands => votes}.to_json
      else
