@@ -15,6 +15,7 @@ $(function() {
 	    $('#time_remaining').css({ background: "url(/images/numbers/lessthan1.png)" });
 	  }
 	  // CACAAAAW
+	  console.log('cacaw')
 	  $('#bird').css({ backgroundPosition : "-160px 0px" }).delay(2000).css({ backgroundPosition : "0px 0px" });
     }
     current_time = remaining;

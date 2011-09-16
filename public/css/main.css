@@ -26,13 +26,13 @@ body {
   height: 156px; 
   background: url(/images/numbers/2thru10.png) -1160px 0 no-repeat transparent; }
 #bird { 
-  width: 160px; 
-  height: 260px; 
-  overflow:hidden; 
-  background: url(/images/toucakeet.png) transparent no-repeat; 
+  width: 160px;
+  height: 260px;
+  overflow:hidden;
+  background: url(/images/toucakeet.png) transparent no-repeat;
   background-position: 0px 0px;
-  position:absolute; 
-  left: 1238px; 
+  position:absolute;
+  left: 1238px;
   top:0;
   z-index:200; }
 .band {
