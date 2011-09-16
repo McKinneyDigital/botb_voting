@@ -20,7 +20,7 @@ $(function() {
             $.each(data["bands"], function(key, value) {
 			  var percent = value/total;
 			  console.log(percent + " | " + (450 - Math.floor(percent * 450) + "px"))
-              $("#band-" + key).animate({ marginTop: (450 - Math.floor(percent * 450)) + "px"} 250 );
+              $("#band-" + key).animate({ marginTop: (450 - Math.floor(percent * 450)) + "px"}, 250 );
             });
           }
         } else if (current_status == "on") {
