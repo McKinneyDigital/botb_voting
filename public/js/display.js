@@ -5,6 +5,9 @@ $(function() {
 
   function handleTime(remaining) {
     if(remaining != current_time) {
+	
+	  $('#bird').addClass('caw').delay(2000).removeClass('caw');
+	
 	  if(remaining > 1) {
 		var pos = 0 - ((remaining - 2) * 145);
 	    $('#two-thru-ten').animate({ backgroundPosition: pos + 'px' }, 500);
@@ -13,10 +16,7 @@ $(function() {
 	    $('#time_remaining').css({ background : "url(/images/numbers/1min.png)" });
 	  } else if (remaining < 1) {
 	    $('#time_remaining').css({ background: "url(/images/numbers/lessthan1.png)" });
-	  }
-	  // CACAAAAW
-	  console.log('cacaw')
-	  $('#bird').addClass('caw').delay(2000).removeClass('caw');
+	  }	  
     }
     current_time = remaining;
   }
