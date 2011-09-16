@@ -14,6 +14,8 @@ $(function() {
 	  } else if (remaining < 1) {
 	    $('#time_remaining').css('background-image','url(/images/numbers/lessthan1.png)');
 	  }
+	  // CACAAAAW
+	  $('#bird').css('background-position', '-160px 0').delay(1000).css('background-position', '0 0');
     }
     current_time = remaining;
   }
