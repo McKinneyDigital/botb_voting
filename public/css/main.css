@@ -39,7 +39,7 @@ body {
   width: 165px;
   float: left; 
   position: relative;
-  margin: 450px 32px; }
+  margin: 450px 32px 0 32px; }
 .first { margin-left: 0; }
 .last { margin-right: 0; }
 
