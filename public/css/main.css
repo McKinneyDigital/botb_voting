@@ -20,7 +20,7 @@ body {
   height: 156px;
   z-index:100; 
   display: block; 
-  background:url(/images/numbers/mins.png) no-repeat transparent; }
+  background: url(/images/numbers/mins.png) no-repeat transparent; }
 #two-thru-ten { 
   width: 145px; 
   height: 156px; 
