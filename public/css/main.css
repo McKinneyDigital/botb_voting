@@ -1,29 +1,56 @@
-body { background-color: #f0ecd4; font: 62.5%/1.4 Helvetica, Arial, sans-serif; overflow: hidden; }
 
-#barchart { width: 1750px; border-bottom: 2px solid #000; padding-left: 50px; margin: 90px auto 0; }
-#header { width: 1920px; height: 245px; margin: 0 auto; position: relative; background: url(../images/on_state.jpg) no-repeat; }
-#info { position: absolute; left: 0; top: 0; width: 500px; }
-#info .number { font-size: 900%; font-weight: bold; }
-#info .number span { font-size: 50%; text-transform: uppercase; font-weight: normal; opacity: 0.6; margin-bottom: -20px; display: block; }
+html, body { height:100%; }
 
-#number { width: 1920px; height: 1080px; position: absolute; top: 0; left: 50%; z-index: 1000; margin-left: -960px; }
-
-#time-remaining { position: absolute; top: 40px; right: 75px; text-align: center; font-size: 1100%; font-weight: bold; width: 110px; display: block; }
-
-.candidate { height: 400px; width: 300px; float: left; margin-right: 50px; position: relative; }
+body {
+  background: url(/images/background.png) no-repeat #000; 
+  font: 62.5%/1.4 Helvetica, Arial, sans-serif; 
+  overflow:hidden; }
+#flags { 
+  width: 1768px;
+  height: 630px;
+  padding-left: 25px;
+  background-color: rgba(0,255,0,0);
+  margin-left: 56px;
+  margin-top: 212px; }
+#time-remaining { 
+  position: absolute; 
+  top: 0;
+  right: 96px; 
+  width: 459px; 
+  height: 156px;
+  z-index:100; 
+  display: block; 
+  background:url(/images/numbers/mins.png) no-repeat transparent; }
+#two-thru-ten { 
+  width: 145px; 
+  height: 156px; 
+  background: url(/images/numbers/2thru10.png) -1160px 0 no-repeat transparent; }
+#bird { 
+  width: 160px; 
+  height: 260px; 
+  overflow:hidden; 
+  background: url(/images/toucakeet.png) 0 0 transparent no-repeat; 
+  position:absolute; 
+  left: 1238px; 
+  top:0;
+  z-index:200; }
+.band {
+  height: 196px;
+  width: 165px;
+  float: left; 
+  position: relative;
+  margin: 450px 32px; }
+.first { margin-left: 0; }
 .last { margin-right: 0; }
-.candidate span { text-align: center; display: block; }
-.candidate .percentage { position: absolute; bottom: 420px; width: 300px; color: #e92c23; font-weight: bold; font-size: 400%; -webkit-transition-property: bottom; -webkit-transition-duration: 1s; }
-.candidate .code { background-color: #000; position: absolute; top: 420px; width: 300px; display: block; font-size: 600%; color: #fff; font-weight: bold; }
-.candidate .code span { display: block; text-transform: uppercase; font-weight: normal; font-size: 40%; margin: 10px 0 -15px 0; }
-.candidate .name { position: absolute; top: 540px; width: 300px; height: 210px; font-size: 250%; color: #000; display: block; text-indent: -10000px; }
-.candidate .bar { position: absolute; bottom: 0; background-color: #64c2e5; width: 300px; -webkit-transition-property: height; -webkit-transition-duration: 1s; }
 
-.counting-cros { background: url(../images/labels/CC_Quintiles_Label.png) no-repeat; }
-.augmented-reality { background: url(../images/labels/AR_SportsMEDIA_Label.png) no-repeat; }
-.role-playaz { background: url(../images/labels/RP_McKinney_Label.png) no-repeat; }
-.shades-of-blue { background: url(../images/labels/SOG_KeySource_Label.png) no-repeat; }
-.transmit-this-read-aid { background: url(../images/labels/TTRA_CBC_Label.png) no-repeat; }
+#band-1 { background: url(/images/flags.png) 0 0 transparent no-repeat; }
+#band-2 { background: url(/images/flags.png) -165px 0 transparent no-repeat; }
+#band-3 { background: url(/images/flags.png) -330px 0 transparent no-repeat; }
+#band-4 { background: url(/images/flags.png) -495px 0 transparent no-repeat; }
+#band-5 { background: url(/images/flags.png) -660px 0 transparent no-repeat; }
+#band-6 { background: url(/images/flags.png) -825px 0 transparent no-repeat; }
+#band-7 { background: url(/images/flags.png) -990px 0 transparent no-repeat; }
+#band-8 { background: url(/images/flags.png) -1155px 0 transparent no-repeat; }
 
 .clearfix:after { content:"."; display:block; height:0; clear:both; visibility:hidden; }
 .clearfix { display:inline-block; }

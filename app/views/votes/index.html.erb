@@ -1,17 +1,13 @@
-<div id="header">
-  <span id="time-remaining"></span>
-</div>
 
-<img src="/images/number.jpg" id="number" />
 
-<div id="barchart" class="clearfix">
+<div id="flags" class="clearfix">
+	
+	<div id="bird"></div>
+	<div id="time-remaining">
+		<div id="two-thru-ten"></div>
+	</div>
 <% @bands.each do |c| %>
-  <div class="band<%= (@bands.index(c) == @bands.count-1) ? " last" : "" %>" id="band-<%= c.id %>">
-    <span class="percentage" style="bottom: <%= @total_votes != 0 ? (c.votes.count/@total_votes)*400 : 0 %>px;"><%= @total_votes != 0 ? c.votes.count/@total_votes*100 : 0 %>%</span>
-    <div class="bar" style="height: <%= @total_votes != 0 ? (c.votes.count/@total_votes)*400 : 0 %>px;"></div>
-    <span class="code"><span>Text</span> <%= c.code %></span>
-    <span class="name <%= c.name.downcase.gsub(/[ _]/, '-').gsub(/[:]/, '') %>"><%= c.name %></span>
-  </div>
+  <div class="band<%= (@bands.index(c) == @bands.count-1) ? " last" : "" %><%= (@bands.index(c) == 0) ? " first" : "" %>" id="band-<%= c.id %>"></div>
 <% end %>
 </div>
 
