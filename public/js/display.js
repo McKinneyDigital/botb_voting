@@ -10,12 +10,12 @@ $(function() {
 	    $('#two-thru-ten').animate({ backgroundPosition: pos + 'px' }, 500);
 	  } else if (remaining == 1) {
 	    $('#two-thru-ten').remove();
-	    $('#time_remaining').css('background-image','url(/images/numbers/1min.png)');
+	    $('#time_remaining').css({ background : "url(/images/numbers/1min.png)" });
 	  } else if (remaining < 1) {
-	    $('#time_remaining').css('background-image','url(/images/numbers/lessthan1.png)');
+	    $('#time_remaining').css({ background: "url(/images/numbers/lessthan1.png)" });
 	  }
 	  // CACAAAAW
-	  $('#bird').css({ backgroundPosition : '-160px 0px' }).delay(2000).css({ backgroundPosition : '0px 0px' });
+	  $('#bird').css({ backgroundPosition : "-160px 0px" }).delay(2000).css({ backgroundPosition : "0px 0px" });
     }
     current_time = remaining;
   }
