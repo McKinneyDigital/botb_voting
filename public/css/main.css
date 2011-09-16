@@ -35,6 +35,7 @@ body {
   left: 1238px;
   top:0;
   z-index:200; }
+#bird.caw { background-position: -160px 0px; }
 .band {
   height: 196px;
   width: 165px;

@@ -16,7 +16,7 @@ $(function() {
 	  }
 	  // CACAAAAW
 	  console.log('cacaw')
-	  $('#bird').css({ backgroundPosition: "-160px 0px" }).delay(2000).css({ backgroundPosition: "0px 0px" });
+	  $('#bird').addClass('caw').delay(2000).removeClass('caw');
     }
     current_time = remaining;
   }
