@@ -29,7 +29,7 @@ body {
   width: 160px; 
   height: 260px; 
   overflow:hidden; 
-  background: url(/images/toucakeet.png) 0 0 transparent no-repeat; 
+  background: url(/images/toucakeet.png) transparent no-repeat; 
   position:absolute; 
   left: 1238px; 
   top:0;

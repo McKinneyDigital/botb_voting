@@ -15,7 +15,7 @@ $(function() {
 	    $('#time_remaining').css('background-image','url(/images/numbers/lessthan1.png)');
 	  }
 	  // CACAAAAW
-	  $('#bird').css('background-position', '-160px 0').delay(1000).css('background-position', '0 0');
+	  $('#bird').css('background-position', '-160px 0px').delay(2000).css('background-position', '0px 0px');
     }
     current_time = remaining;
   }
@@ -39,7 +39,6 @@ $(function() {
           if (total != 0) {
             $.each(data["bands"], function(key, value) {
 			  var percent = value/total;
-			  console.log(percent + " | " + (450 - Math.floor(percent * 450) + "px"))
               $("#band-" + key).animate({ marginTop: (450 - Math.floor(percent * 450)) + "px"}, 250 );
             });
           }
