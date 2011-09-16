@@ -13,14 +13,14 @@ $(function() {
           $("#time-remaining").html(parseInt(data["time_remaining"]) < 1 ? "<1" : data["time_remaining"]);
           var total = data["total"];
           var max = 0;
-          $.each(data["candidates"], function(key, value) {
+          $.each(data["bands"], function(key, value) {
             if (max <= value) max = value;
           });
           if (total != 0) {
-            $.each(data["candidates"], function(key, value) {
-              $("#candidate-" + key + " .percentage").html(Math.round((value/total*100)*100)/100 + "%");
-              $("#candidate-" + key + " .percentage").css({ bottom: (value/max*400) + "px" });
-              $("#candidate-" + key + " .bar").css({ height: (value/max)*400 + "px" });
+            $.each(data["bands"], function(key, value) {
+              $("#band-" + key + " .percentage").html(Math.round((value/total*100)*100)/100 + "%");
+              $("#band-" + key + " .percentage").css({ bottom: (value/max*400) + "px" });
+              $("#band-" + key + " .bar").css({ height: (value/max)*400 + "px" });
             });
           }
         } else if (current_status == "on") {
