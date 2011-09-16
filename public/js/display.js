@@ -6,7 +6,7 @@ $(function() {
   function handleTime(remaining) {
     if(remaining != current_time) {
 	  if(remaining > 1) {
-	    $('#two-thru-ten').animate({ backgroundPosition: $('#two-thru-ten').css('background-position').split('px')[0] + 145 + 'px' }, 500);
+	    $('#two-thru-ten').animate({ backgroundPosition: (parseInt($('#two-thru-ten').css('background-position').split('px')[0]) + 145) + 'px' }, 500);
 	  } else if (remaining == 1) {
 	    $('#two-thru-ten').remove();
 	    $('#time_remaining').css('background','url(/images/numbers/1min.png)');
