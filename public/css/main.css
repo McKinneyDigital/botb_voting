@@ -18,7 +18,8 @@ body {
   width: 459px; 
   height: 156px;
   z-index:100; 
-  display: block; }
+  display: block;
+  background: url(/images/numbers/mins.png) no-repeat transparent; }
 #min-tray {
   width:1377px;
   height: 156px;
@@ -26,9 +27,8 @@ body {
 .min-block {
   width: 459px;
   height: 156px; 
-  float:left; 
-  background: url(/images/numbers/mins.png) no-repeat transparent; }
-#many-mins {  }
+  float:left;  }
+#many-mins { }
 #one-min { background: url(/images/numbers/1min.png) no-repeat transparent; }
 #less-than-one-min { background: url(/images/numbers/lessthan1.png) no-repeat transparent; }
 #two-thru-ten { 
