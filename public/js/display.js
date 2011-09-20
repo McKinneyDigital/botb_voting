@@ -6,16 +6,16 @@ $(function() {
   function handleTime(remaining) {
     if(remaining != current_time) {
 	
-	  $('#bird').addClass('caw')
+	  $('#bird').addClass("caw");
 	
 	  if(remaining > 1) {
 		var pos = 0 - ((remaining - 2) * 145);
 	    $('#two-thru-ten').animate({ backgroundPosition: pos + 'px' }, 500);
 	  } else if (remaining == 1) {
 	    $('#two-thru-ten').remove();
-	    $('#time_remaining').css({ background : "url(/images/numbers/1min.png)" });
+	    $('#time_remaining').css({ background: "none" }).css({ background : "url(/images/numbers/1min.png)" });
 	  } else if (remaining < 1) {
-	    $('#time_remaining').css({ background: "url(/images/numbers/lessthan1.png)" });
+	    $('#time_remaining').css({ background: "none" }).css({ background: "url(/images/numbers/lessthan1.png)" });
 	  }	  
     }
     current_time = remaining;
