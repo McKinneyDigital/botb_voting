@@ -6,7 +6,7 @@ $(function() {
   function handleTime(remaining) {
     if(remaining != current_time) {
 	
-	  $('#bird').addClass("caw").delay(2000).removeClass("caw");
+	  $('#bird').css({ backgroundPosition: "-160px 0px"}).delay(2000).css({ backgroundPosition: "0px 0px"});
 	
 	  if(remaining > 1) {
 		var pos = 0 - ((remaining - 2) * 145);
