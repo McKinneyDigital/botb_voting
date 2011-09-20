@@ -16,7 +16,7 @@ class Command < ActiveRecord::Base
     return false if !last
 
     if last.instruction == "start"
-      return true if (Time.now - last.created_at).round / 60 <= 10
+      return true if (Time.now - last.created_at).round / 60 <= 2
     elsif last.instruction == "stop"
       return false
     end
