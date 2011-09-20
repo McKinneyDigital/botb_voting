@@ -24,10 +24,9 @@ $(function() {
 		var pos = 0 - ((remaining - 2) * 145);
 	    $('#two-thru-ten').animate({ backgroundPosition: pos + 'px' }, 500);
 	  } else if (remaining == 1) {
-	    $('#two-thru-ten').remove();
-	    $('#time-remaining').css({ background : "url(/images/numbers/1min.png)" });
+		$('#min-tray').animate({ marginLeft: "-459px" }, 500);
 	  } else if (remaining < 1) {
-	    $('#time-remaining').css({ background: "url(/images/numbers/lessthan1.png)" });
+		$('#min-tray').animate({ marginLeft: "-918px" }, 500);
 	  }	  
     }
     current_time = remaining;
@@ -57,8 +56,6 @@ $(function() {
           }
         } else if (current_status == "on") {
           current_status = "off";
-          // $("#header").css({background:"url(/assets/images/off_state.jpg) no-repeat"});
-          // $("#time-remaining").html("0");
           clearInterval(timer);
         } else {
           $("#number").show();

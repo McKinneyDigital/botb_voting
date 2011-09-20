@@ -1,6 +1,4 @@
-
 html, body { height:100%; }
-
 body {
   background: url(/images/background.png) no-repeat #000; 
   font: 62.5%/1.4 Helvetica, Arial, sans-serif; 
@@ -15,12 +13,23 @@ body {
 #time-remaining { 
   position: absolute; 
   top: 0;
+  overflow: hidden;
   right: 96px; 
   width: 459px; 
   height: 156px;
   z-index:100; 
-  display: block; 
-  background: url(/images/numbers/mins.png) no-repeat transparent; }
+  display: block; }
+#min-tray {
+  width:1377px;
+  height: 156px;
+  display:block; }
+.min-block {
+  width: 459px;
+  height: 156px; 
+  float:left; }
+#many-mins { background: url(/images/numbers/mins.png) no-repeat transparent; }
+#one-min { background: url(/images/numbers/1min.png) no-repeat transparent; }
+#less-than-one-min { background: url(/images/numbers/lessthan1.png) no-repeat transparent; }
 #two-thru-ten { 
   width: 145px; 
   height: 156px; 
