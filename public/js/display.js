@@ -2,15 +2,23 @@ $(function() {
 	
   var current_status = "off";
   var current_time = 10;
-  function closeBeak() {
-	$('#bird').css({ backgroundPosition: "0px 0px"});
+  var beak_position = "closed";
+
+  function toggleBeak() {
+	if(beak_position == "closed"){
+	  $('#bird').css({ backgroundPosition: "-160px 0px"});
+	  beak_position = "open";
+	}else {
+	  $('#bird').css({ backgroundPosition: "0px 0px"});
+	  beak_position = "closed";
+	}
   }
 
   function handleTime(remaining) {
     if(remaining != current_time) {
 	
-	  $('#bird').css({ backgroundPosition: "-160px 0px"});
-	  var closeBeak = window.setTimeout( closeBeak, 2000 );
+	  toggleBeak();
+	  var closeBeak = window.setTimeout( toggleBeak, 1000 );
 	  
 	  if(remaining > 1) {
 		var pos = 0 - ((remaining - 2) * 145);
