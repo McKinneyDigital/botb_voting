@@ -25,9 +25,9 @@ $(function() {
 	    $('#two-thru-ten').animate({ backgroundPosition: pos + 'px' }, 500);
 	  } else if (remaining == 1) {
 	    $('#two-thru-ten').remove();
-	    $('#time-remaining').css({ background: "none" }).css({ background : "url(/images/numbers/1min.png)" });
+	    $('#time-remaining').css({ background : "url(/images/numbers/1min.png)" });
 	  } else if (remaining < 1) {
-	    $('#time-remaining').css({ background: "none" }).css({ background: "url(/images/numbers/lessthan1.png)" });
+	    $('#time-remaining').css({ background: "url(/images/numbers/lessthan1.png)" });
 	  }	  
     }
     current_time = remaining;
@@ -58,7 +58,7 @@ $(function() {
         } else if (current_status == "on") {
           current_status = "off";
           // $("#header").css({background:"url(/assets/images/off_state.jpg) no-repeat"});
-          $("#time-remaining").html("0");
+          // $("#time-remaining").html("0");
           clearInterval(timer);
         } else {
           $("#number").show();
