@@ -29,12 +29,11 @@ body {
   width: 160px;
   height: 260px;
   background: url(/images/toucakeet.png) transparent no-repeat;
-  background-position: 0px 0px;
   position:absolute;
   left: 1238px;
   top:0;
   z-index:200; }
-.caw { background-position: -160px 0px; }
+#flags #bird.caw { background-position: -160px 0px; }
 .band {
   height: 196px;
   width: 165px;
