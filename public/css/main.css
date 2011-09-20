@@ -28,7 +28,6 @@ body {
   width: 459px;
   height: 156px; 
   float:left;  }
-#many-mins { }
 #one-min { background: url(/images/numbers/1min.png) no-repeat transparent; }
 #less-than-one-min { background: url(/images/numbers/lessthan1.png) no-repeat transparent; }
 #two-thru-ten { 
