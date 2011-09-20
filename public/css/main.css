@@ -27,8 +27,8 @@ body {
 .min-block {
   width: 459px;
   height: 156px; 
-  float:left;
-  background: url(/images/numbers/mins.png) no-repeat transparent; }
+  float:left; }
+#many-mins { background: url(/images/numbers/mins.png) no-repeat transparent; }
 #one-min { background: url(/images/numbers/1min.png) no-repeat transparent; }
 #less-than-one-min { background: url(/images/numbers/lessthan1.png) no-repeat transparent; }
 #two-thru-ten { 
