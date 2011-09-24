@@ -3,13 +3,18 @@ body {
   background: url(/images/background.png) no-repeat #000; 
   font: 62.5%/1.4 Helvetica, Arial, sans-serif; 
   overflow:hidden; }
+.ended {
+	position:absolute;
+	z-index:1000;
+}
 #flags { 
+  position:relative;
   width: 1768px;
   height: 630px;
   padding-left: 25px;
   background-color: rgba(0,255,0,0);
   margin-left: 56px;
-  margin-top: 212px; }
+  top: 212px; }
 #time-remaining { 
   position: absolute; 
   top: 0;
@@ -41,7 +46,7 @@ body {
   background: url(/images/toucakeet.png) transparent no-repeat;
   position:absolute;
   left: 1238px;
-  top:0;
+  top: 0;
   z-index:200; }
 #flags #bird.caw { background-position: -160px 0px; }
 .band {

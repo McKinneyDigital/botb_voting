@@ -3,6 +3,9 @@ $(function() {
   var current_status = "off";
   var current_time = 10;
   var beak_position = "closed";
+  var difference = 0;
+
+  //$('.ended').hide();
 
   function toggleBeak() {
 	if(beak_position == "closed"){
@@ -39,10 +42,14 @@ $(function() {
       dataType: 'json',
       url: '/votes/status',
       success: function(data) {
+	
+	    var top_vote_getter = Math.max(data[total]);
+	    console.log(top_vote_getter);
+	
         if (data["status"] == "on") {
           current_status = "on";
 		  handleTime( parseInt(data['time_remaining']) );
-		
+		  $('.ended').hide();
           var total = data["total"];
           var max = 0;
           $.each(data["bands"], function(key, value) {
@@ -51,12 +58,21 @@ $(function() {
           if (total != 0) {
             $.each(data["bands"], function(key, value) {
 			  var percent = value/total;
-              $("#band-" + key).animate({ marginTop: (450 - Math.floor(percent * 450)) + "px"}, 250 );
+			  var original = 0;
+			  if( value == top_vote_getter) {
+				original = percent;
+				percent = .9;
+			  } else {
+				original = percent;
+				
+			  }
+			$("#band-" + key).animate({ marginTop: (450 - Math.floor(percent * 450)) + "px"}, 250 );
             });
           }
         } else if (current_status == "on") {
           current_status = "off";
           clearInterval(timer);
+		  $('.ended').show();
         } else {
           $("#number").show();
         }
