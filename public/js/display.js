@@ -86,7 +86,7 @@ $(function() {
 				percent = .9;
 			  } else {
 				percent = percent + offset;
-				console.log(key + "  " + percent + " / offset = " + offsetgit ad);
+				console.log(key + "  " + percent + " / offset = " + offset);
 			  }
 			$("#band-" + key).animate({ marginTop: (450 - Math.floor(percent * 450)) + "px"}, 250 );
             });
