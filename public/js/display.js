@@ -67,6 +67,7 @@ $(function() {
 	    console.log(votes_array)
 	    console.log(top_vote_getter);
 	
+	
         if (data["status"] == "on") {
           current_status = "on";
 		  handleTime( parseInt(data['time_remaining']) );
@@ -85,6 +86,7 @@ $(function() {
 				percent = .9;
 			  } else {
 				percent = percent + offset;
+				console.log(key + "  " + percent + " / offset = " + offset);
 			  }
 			$("#band-" + key).animate({ marginTop: (450 - Math.floor(percent * 450)) + "px"}, 250 );
             });
