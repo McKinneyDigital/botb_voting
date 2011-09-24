@@ -53,11 +53,17 @@ $(function() {
       success: function(data) {
 	
 	    var votes_array = [];
+	    var total = data["total"];
 	
 	    for( var i in data["bands"]){
 		  votes_array.push( parseInt(data["bands"][i]) )
 	    }
 	    var top_vote_getter = votes_array.getMax();
+	
+	    var top_percent = top_vote_getter / total;
+	    var offset = 0;
+	    if( top_vote_getter <= 0.9) offset = 0.9 - top_percent;
+	
 	    console.log(votes_array)
 	    console.log(top_vote_getter);
 	
@@ -65,7 +71,7 @@ $(function() {
           current_status = "on";
 		  handleTime( parseInt(data['time_remaining']) );
 		  $('.ended').hide();
-          var total = data["total"];
+          
           var max = 0;
           $.each(data["bands"], function(key, value) {
             if (max <= value) max = value;
@@ -78,8 +84,7 @@ $(function() {
 				original = percent;
 				percent = .9;
 			  } else {
-				original = percent;
-				
+				percent = percent + offset;
 			  }
 			$("#band-" + key).animate({ marginTop: (450 - Math.floor(percent * 450)) + "px"}, 250 );
             });
