@@ -62,7 +62,7 @@ $(function() {
 	
 	    var top_percent = top_vote_getter / total;
 	    var offset = 0;
-	    if( top_vote_getter <= 0.9) offset = 0.9 - top_percent;
+	    if( top_percent <= 0.9) offset = 0.9 - top_percent;
 	
 	    console.log(votes_array)
 	    console.log(top_vote_getter);
@@ -86,7 +86,7 @@ $(function() {
 				percent = .9;
 			  } else {
 				percent = percent + offset;
-				console.log(key + "  " + percent + " / offset = " + offset);
+				console.log(key + "  " + percent + " / offset = " + offsetgit ad);
 			  }
 			$("#band-" + key).animate({ marginTop: (450 - Math.floor(percent * 450)) + "px"}, 250 );
             });
