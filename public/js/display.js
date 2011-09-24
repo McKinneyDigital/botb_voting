@@ -43,8 +43,12 @@ $(function() {
       url: '/votes/status',
       success: function(data) {
 	
-	    var top_vote_getter = Math.max(parseInt(data['bands']));
-	    
+	    var votes_array = [];
+	    $.each(data['bands'], function (key, value) {
+	      votes_array.push(parseInt(value))
+	    })
+	
+	    var top_vote_getter = Math.max(votes_array);
 	    console.log(top_vote_getter);
 	
         if (data["status"] == "on") {
