@@ -85,7 +85,7 @@ $(function() {
 				original = percent;
 				percent = .9;
 			  } else {
-				percent = percent + offset;
+				if(percent > 0) percent = percent + offset;
 				console.log(key + "  " + percent + " / offset = " + offset);
 			  }
 			$("#band-" + key).animate({ marginTop: (450 - Math.floor(percent * 450)) + "px"}, 250 );
