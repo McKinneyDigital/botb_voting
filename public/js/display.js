@@ -14,7 +14,7 @@ $(function() {
   var beak_position = "closed";
   var difference = 0;
 
-  //$('.ended').hide();
+  $('.ended').hide();
 
   function toggleBeak() {
 	if(beak_position == "closed"){
@@ -71,7 +71,7 @@ $(function() {
         if (data["status"] == "on") {
           current_status = "on";
 		  handleTime( parseInt(data['time_remaining']) );
-		  $('.ended').hide();
+		  $('.ready').hide();
           
           var max = 0;
           $.each(data["bands"], function(key, value) {

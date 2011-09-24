@@ -3,7 +3,7 @@ body {
   background: url(/images/background.png) no-repeat #000; 
   font: 62.5%/1.4 Helvetica, Arial, sans-serif; 
   overflow:hidden; }
-.ended {
+.ended, .ready {
 	position:absolute;
 	z-index:1000;
 }
