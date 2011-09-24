@@ -1,5 +1,14 @@
 $(function() {
 	
+	Array.prototype.getMax = function()
+	{
+	var max = Number.MIN_VALUE, v, len = this.length, i = 0;
+	for (; i < len; ++i)
+	if (typeof (v = this[i]) == 'number')
+	max = Math.max(max, v);
+	return max;
+	}
+	
   var current_status = "off";
   var current_time = 10;
   var beak_position = "closed";
@@ -48,7 +57,7 @@ $(function() {
 	    for( var i in data["bands"]){
 		  votes_array.push( parseInt(data["bands"][i]) )
 	    }
-	    var top_vote_getter = Math.max(votes_array);
+	    var top_vote_getter = votes_array.getMax();
 	    console.log(votes_array)
 	    console.log(top_vote_getter);
 	
