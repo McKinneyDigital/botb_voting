@@ -44,11 +44,12 @@ $(function() {
       success: function(data) {
 	
 	    var votes_array = [];
-	    $.each(data['bands'], function (key, value) {
-	      votes_array.push(parseInt(value))
-	    })
 	
+	    for( var i in data["bands"]){
+		  votes_array.push( parseInt(data["bands"][i]) )
+	    }
 	    var top_vote_getter = Math.max(votes_array);
+	    console.log(votes_array)
 	    console.log(top_vote_getter);
 	
         if (data["status"] == "on") {
