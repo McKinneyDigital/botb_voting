@@ -43,7 +43,8 @@ $(function() {
       url: '/votes/status',
       success: function(data) {
 	
-	    var top_vote_getter = Math.max(data['total']);
+	    var top_vote_getter = Math.max(data['bands']);
+	    
 	    console.log(top_vote_getter);
 	
         if (data["status"] == "on") {
