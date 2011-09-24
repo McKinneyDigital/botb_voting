@@ -43,7 +43,7 @@ $(function() {
       url: '/votes/status',
       success: function(data) {
 	
-	    var top_vote_getter = Math.max(data['bands']);
+	    var top_vote_getter = Math.max(parseInt(data['bands']));
 	    
 	    console.log(top_vote_getter);
 	
