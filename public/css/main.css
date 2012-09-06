@@ -9,11 +9,10 @@ body {
 }
 #flags { 
   position:relative;
-  width: 1768px;
-  height: 630px;
-  padding-left: 25px;
+  width: 1440px;
+  height: 745px;
+  overflow: hidden;
   background-color: rgba(0,255,0,0);
-  margin-left: 56px;
   top: 212px; }
 #time-remaining { 
   position: absolute; 
@@ -50,22 +49,30 @@ body {
   z-index:200; }
 #flags #bird.caw { background-position: -160px 0px; }
 .band {
-  height: 196px;
-  width: 165px;
+  height: 745px;
+  width: 200px;
   float: left; 
   position: relative;
-  margin: 450px 32px 0 32px; }
+	z-index: 3;
+  margin: 350px 0 0 0; }
+.pedestals { position: absolute; bottom: 0; z-index: 5; }
+.pedestal {
+	width: 200px;
+	height: 39px;
+	float: left;
+	background: url(/images/pedestal.png) top center transparent no-repeat;
+	z-index: 5;
+}
 .first { margin-left: 0; }
 .last { margin-right: 0; }
 
-#band-1 { background: url(/images/flags.png) 0 0 transparent no-repeat; }
-#band-2 { background: url(/images/flags.png) -165px 0 transparent no-repeat; }
-#band-3 { background: url(/images/flags.png) -330px 0 transparent no-repeat; }
-#band-4 { background: url(/images/flags.png) -495px 0 transparent no-repeat; }
-#band-5 { background: url(/images/flags.png) -660px 0 transparent no-repeat; }
-#band-6 { background: url(/images/flags.png) -825px 0 transparent no-repeat; }
-#band-7 { background: url(/images/flags.png) -990px 0 transparent no-repeat; }
-#band-8 { background: url(/images/flags.png) -1155px 0 transparent no-repeat; }
+#band-1 { background: url(/images/band_column_02.png) top center transparent no-repeat; }
+#band-2 { background: url(/images/band_column_03.png) top center transparent no-repeat; }
+#band-3 { background: url(/images/band_column_04.png) top center transparent no-repeat; }
+#band-4 { background: url(/images/band_column_05.png) top center transparent no-repeat; }
+#band-5 { background: url(/images/band_column_06.png) top center transparent no-repeat; }
+#band-6 { background: url(/images/band_column_07.png) top center transparent no-repeat; }
+#band-7 { background: url(/images/band_column_08.png) top center transparent no-repeat; }
 
 .clearfix:after { content:"."; display:block; height:0; clear:both; visibility:hidden; }
 .clearfix { display:inline-block; }

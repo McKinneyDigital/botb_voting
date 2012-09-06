@@ -1,23 +1,30 @@
-<div class="ready"><img src="/images/ready.png"></div>
 <div class="ended"><img src="/images/voting_over.jpg"></div>
-<div id="bird"></div>
-  
-  <div id="time-remaining">
-    <div id="min-tray">
-      <div id="many-mins" class="min-block">
-	    <div id="two-thru-ten"></div>
-      </div>
-	  <div id="one-min" class="min-block"></div>
-      <div id="less-than-one-min" class="min-block"></div>
-    </div>
-  </div>
-<div id="flags" class="clearfix">
-	
-  
 
-<% @bands.each do |c| %>
-  <div class="band<%= (@bands.index(c) == @bands.count-1) ? " last" : "" %><%= (@bands.index(c) == 0) ? " first" : "" %>" id="band-<%= c.id %>"></div>
-<% end %>
+	<div id="time-remaining">
+		<div id="min-tray">
+			<div id="many-mins" class="min-block">
+				<div id="two-thru-ten"></div>
+			</div>
+			<div id="one-min" class="min-block"></div>
+			<div id="less-than-one-min" class="min-block"></div>
+		</div>
+	</div>
+	<div id="flags" class="clearfix">
+		
+		<div class="pedestals">
+			<div class="pedestal"></div>
+			<div class="pedestal"></div>
+			<div class="pedestal"></div>
+			<div class="pedestal"></div>
+			<div class="pedestal"></div>
+			<div class="pedestal"></div>
+			<div class="pedestal"></div>
+		</div>
+
+
+	<% @bands.each do |c| %>
+	<div class="band<%= (@bands.index(c) == @bands.count-1) ? " last" : "" %><%= (@bands.index(c) == 0) ? " first" : "" %>" id="band-<%= c.id %>"></div>
+	<% end %>
 </div>
 
 <script type="text/javascript" src="/js/display.js"></script>

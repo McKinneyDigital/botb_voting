@@ -29,8 +29,8 @@ $(function() {
   function handleTime(remaining) {
     if(remaining != current_time) {
 	
-	  toggleBeak();
-	  var closeBeak = window.setTimeout( toggleBeak, 1000 );
+	  // toggleBeak();
+	  // var closeBeak = window.setTimeout( toggleBeak, 1000 );
 	  
 	  if(remaining > 1) {
 		var pos = 0 - ((remaining - 2) * 145);
@@ -62,11 +62,7 @@ $(function() {
 	
 	    var top_percent = top_vote_getter / total;
 	    var offset = 0;
-	    if( top_percent <= 0.9) offset = 0.9 - top_percent;
-	
-	    console.log(votes_array)
-	    console.log(top_vote_getter);
-	
+	    if( top_percent <= 0.9) offset = 0.9 - top_percent;	
 	
         if (data["status"] == "on") {
           current_status = "on";
