@@ -84,7 +84,7 @@ $(function() {
 				if(percent > 0) percent = percent + offset;
 				console.log(key + "  " + percent + " / offset = " + offset);
 			  }
-			$("#band-" + key).animate({ marginTop: (450 - Math.floor(percent * 450)) + "px"}, 250 );
+			$("#band-" + key).animate({ marginTop: (350 - Math.floor(percent * 350)) + "px"}, 250 );
             });
           }
         } else if (current_status == "on") {
