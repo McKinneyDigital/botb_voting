@@ -9,7 +9,7 @@ set :copy_exclude, [".git", "Capfile", "config/deploy.rb"]
 set :use_sudo, false
 
 set :scm, :git
-set :repository,  "git@github.com:matthisamoto/botb_voting.git"
+set :repository,  "git@github.com:McKinneyDigital/botb_voting.git"
 
 namespace :remote do
   desc "Create directory required by copy_remote_dir"
