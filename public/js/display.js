@@ -28,10 +28,6 @@ $(function() {
 
   function handleTime(remaining) {
     if(remaining != current_time) {
-	
-	  // toggleBeak();
-	  // var closeBeak = window.setTimeout( toggleBeak, 1000 );
-	  
 	  if(remaining > 1) {
 		var pos = 0 - ((remaining - 2) * 145);
 	    $('#two-thru-ten').animate({ backgroundPosition: pos + 'px' }, 500);
@@ -43,7 +39,24 @@ $(function() {
     }
     current_time = remaining;
   }
-  
+
+  function set_time_and_go() {
+		$('#countdown').css('display','block');
+		$('#countdown').countDown({
+			targetOffset: {
+				'day': 		0,
+				'month': 	0,
+				'year': 	0,
+				'hour': 	0,
+				'min': 		10,
+				'sec': 		0
+			}, omitWeeks: true,
+			onComplete: function() { 
+				current_status = "off";
+				$("#countdown").css("display","none");
+			}
+		});
+	}
 
   var timer = setInterval(function() {
     $.ajax({
@@ -65,8 +78,9 @@ $(function() {
 	    if( top_percent <= 0.9) offset = 0.9 - top_percent;	
 	
         if (data["status"] == "on") {
+			if(current_status == "off") set_time_and_go();
           current_status = "on";
-		  handleTime( parseInt(data['time_remaining']) );
+		  // handleTime( parseInt(data['time_remaining']) );
 		  $('.ready').hide();
           
           var max = 0;
@@ -97,4 +111,6 @@ $(function() {
       }
     });
   }, 3000);
+
 });
+

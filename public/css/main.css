@@ -1,53 +1,49 @@
+@font-face {
+    font-family: 'kirstybold';
+    src: url('../fonts/kirsty-bold-webfont.eot');
+    src: url('../fonts/kirsty-bold-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/kirsty-bold-webfont.woff') format('woff'),
+         url('../fonts/kirsty-bold-webfont.ttf') format('truetype'),
+         url('../fonts/kirsty-bold-webfont.svg#kirstybold') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
 html, body { height:100%; }
 body {
-  background: url(/images/background.png) no-repeat #000; 
-  font: 62.5%/1.4 Helvetica, Arial, sans-serif; 
-  overflow:hidden; }
+	background: url(/images/background.png) no-repeat #000;
+	font-family: "kirstybold", Arial, Helvetica, sans-serif;
+	width: 1400px;
+	height: 1050px;
+	overflow:hidden;
+}
 .ended, .ready {
 	position:absolute;
-	z-index:1000;
+	z-index: 1000;
 }
 #flags { 
-  position:relative;
-  width: 1440px;
-  height: 745px;
-  overflow: hidden;
-  background-color: rgba(0,255,0,0);
-  top: 212px; }
-#time-remaining { 
-  position: absolute; 
-  top: 0;
-  overflow: hidden;
-  right: 96px; 
-  width: 459px; 
-  height: 156px;
-  z-index:100; 
-  display: block;
-  background: url(/images/numbers/mins-background.png) no-repeat transparent; }
-#min-tray {
-  width:1377px;
-  height: 156px;
-  display:block; }
-.min-block {
-  width: 459px;
-  height: 156px; 
-  float:left; }
-#many-mins { background: url(/images/numbers/mins.png) no-repeat transparent; }
-#one-min { background: url(/images/numbers/1min.png) no-repeat transparent; }
-#less-than-one-min { background: url(/images/numbers/lessthan1.png) no-repeat transparent; }
-#two-thru-ten { 
-  width: 145px; 
-  height: 156px; 
-  background: url(/images/numbers/2thru10.png) -1160px 0 no-repeat transparent; }
-#bird { 
-  width: 160px;
-  height: 260px;
-  background: url(/images/toucakeet.png) transparent no-repeat;
-  position:absolute;
-  left: 1238px;
-  top: 0;
-  z-index:200; }
-#flags #bird.caw { background-position: -160px 0px; }
+	position: absolute;
+	width: 1400px;
+	height: 745px;
+	overflow: hidden;
+	background-color: rgba(0,255,0,0);
+	top: 200px;
+}
+#countdown { 
+	margin: 80px auto 0 auto;
+	overflow: hidden;
+	width: 315px; 
+	height: 150px;
+	display: none;
+}
+.digit-block {
+	float: left;
+	color: #fff;
+	font-size: 6em;
+	margin: 0 5px;
+	height: 100px;
+}
+.colon { margin-top: -15px; }
+.digit { float: left;  width: 65px; text-align: center; height: 100px; }
 .band {
   height: 745px;
   width: 200px;

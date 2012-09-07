@@ -1,30 +1,34 @@
 <div class="ended"><img src="/images/voting_over.jpg"></div>
 
-	<div id="time-remaining">
-		<div id="min-tray">
-			<div id="many-mins" class="min-block">
-				<div id="two-thru-ten"></div>
-			</div>
-			<div id="one-min" class="min-block"></div>
-			<div id="less-than-one-min" class="min-block"></div>
-		</div>
+<div id="countdown" class="clearfix">
+	
+	<div id="mns" class="digit-block dash minutes_dash">
+			<div class="digit">0</div>
+			<div class="digit">0</div>
+	</div>	
+	<div class="colon digit-block">:</div>	
+	<div id="scs" class="digit-block dash seconds_dash">
+			<div class="digit">0</div>
+			<div class="digit last">0</div>
 	</div>
-	<div id="flags" class="clearfix">
-		
-		<div class="pedestals">
-			<div class="pedestal"></div>
-			<div class="pedestal"></div>
-			<div class="pedestal"></div>
-			<div class="pedestal"></div>
-			<div class="pedestal"></div>
-			<div class="pedestal"></div>
-			<div class="pedestal"></div>
-		</div>
-
-
-	<% @bands.each do |c| %>
-	<div class="band<%= (@bands.index(c) == @bands.count-1) ? " last" : "" %><%= (@bands.index(c) == 0) ? " first" : "" %>" id="band-<%= c.id %>"></div>
-	<% end %>
+	
 </div>
 
+<div id="flags" class="clearfix">
+	
+	<div class="pedestals">
+		<div class="pedestal"></div>
+		<div class="pedestal"></div>
+		<div class="pedestal"></div>
+		<div class="pedestal"></div>
+		<div class="pedestal"></div>
+		<div class="pedestal"></div>
+		<div class="pedestal"></div>
+	</div>
+
+<% @bands.each do |c| %>
+	<div class="band<%= (@bands.index(c) == @bands.count-1) ? " last" : "" %><%= (@bands.index(c) == 0) ? " first" : "" %>" id="band-<%= c.id %>"></div>
+<% end %>
+</div>
+<script type="text/javascript" src="/js/countdown.js"></script>
 <script type="text/javascript" src="/js/display.js"></script>
