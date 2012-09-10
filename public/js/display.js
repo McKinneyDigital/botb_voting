@@ -2,11 +2,11 @@ $(function() {
 	
 	Array.prototype.getMax = function()
 	{
-	var max = Number.MIN_VALUE, v, len = this.length, i = 0;
-	for (; i < len; ++i)
-	if (typeof (v = this[i]) == 'number')
-	max = Math.max(max, v);
-	return max;
+		var max = Number.MIN_VALUE, v, len = this.length, i = 0;
+		for (; i < len; ++i)
+		if (typeof (v = this[i]) == 'number')
+		max = Math.max(max, v);
+		return max;
 	}
 	
   var current_status = "off";
@@ -14,7 +14,6 @@ $(function() {
   var beak_position = "closed";
   var difference = 0;
 
-  $('.ended').hide();
 
   function toggleBeak() {
 	if(beak_position == "closed"){
@@ -48,7 +47,7 @@ $(function() {
 				'month': 	0,
 				'year': 	0,
 				'hour': 	0,
-				'min': 		10,
+				'min': 		1,
 				'sec': 		0
 			}, omitWeeks: true,
 			onComplete: function() { 
@@ -57,6 +56,11 @@ $(function() {
 			}
 		});
 	}
+	
+	
+	
+	
+  $('.ended').hide();
 
   var timer = setInterval(function() {
     $.ajax({
@@ -111,6 +115,10 @@ $(function() {
       }
     });
   }, 3000);
+
+
+
+
 
 });
 
