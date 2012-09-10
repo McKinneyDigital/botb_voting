@@ -1,8 +1,7 @@
 (function($) {
 
 	
-	Array.prototype.getMax = function()
-	{
+	Array.prototype.getMax = function()	{
 		var max = Number.MIN_VALUE, v, len = this.length, i = 0;
 		for (; i < len; ++i)
 		if (typeof (v = this[i]) == 'number')
@@ -56,6 +55,7 @@
 				current_status = "off";
 				$("#countdown").css("display","none");
 				$('.ended').show();
+				clearInterval(timer);
 			}
 		});
 	}
