@@ -1,4 +1,5 @@
-$(function() {
+(function($) {
+
 	
 	Array.prototype.getMax = function()
 	{
@@ -13,33 +14,34 @@ $(function() {
   var current_time = 10;
   var beak_position = "closed";
   var difference = 0;
+	var count = 1;
 
 
-  function toggleBeak() {
-	if(beak_position == "closed"){
-	  $('#bird').css({ backgroundPosition: "-160px 0px"});
-	  beak_position = "open";
-	}else {
-	  $('#bird').css({ backgroundPosition: "0px 0px"});
-	  beak_position = "closed";
+	function toggleBeak() {
+		if(beak_position == "closed"){
+			$('#bird').css({ backgroundPosition: "-160px 0px"});
+			beak_position = "open";
+		}else {
+			$('#bird').css({ backgroundPosition: "0px 0px"});
+			beak_position = "closed";
+		}
 	}
-  }
 
-  function handleTime(remaining) {
+	function handleTime(remaining) {
     if(remaining != current_time) {
-	  if(remaining > 1) {
-		var pos = 0 - ((remaining - 2) * 145);
-	    $('#two-thru-ten').animate({ backgroundPosition: pos + 'px' }, 500);
-	  } else if (remaining == 1) {
-		$('#min-tray').animate({ marginLeft: "-459px" }, 500);
-	  } else if (remaining < 1) {
-		$('#min-tray').animate({ marginLeft: "-918px" }, 500);
-	  }	  
+		if(remaining > 1) {
+			var pos = 0 - ((remaining - 2) * 145);
+			$('#two-thru-ten').animate({ backgroundPosition: pos + 'px' }, 500);
+		} else if (remaining == 1) {
+			$('#min-tray').animate({ marginLeft: "-459px" }, 500);
+		} else if (remaining < 1) {
+			$('#min-tray').animate({ marginLeft: "-918px" }, 500);
+		}	  
     }
-    current_time = remaining;
-  }
+    	current_time = remaining;
+	}
 
-  function set_time_and_go() {
+	function set_time_and_go() {
 		$('#countdown').css('display','block');
 		$('#countdown').countDown({
 			targetOffset: {
@@ -58,9 +60,20 @@ $(function() {
 		});
 	}
 	
-  $('.ended').hide();
-
-  var timer = setInterval(function() {
+	$('.ended').hide();
+	$.each( $('.spot'), function() {
+		$(this).animate( { opacity: 0 }, 0);
+	});
+	var timer = setInterval(function() {
+	
+		$('#spot_' + count.toString()).animate( { opacity: 0 }, 1000);
+		count++;
+		if( count > 3 ) count = 1;
+		$('#spot_' + count.toString()).animate( { opacity: 1 }, 1000);
+	
+	
+	
+	
     $.ajax({
       type: 'GET',
       dataType: 'json',
@@ -114,9 +127,4 @@ $(function() {
     });
   }, 3000);
 
-
-
-
-
-});
-
+}(jQuery));
