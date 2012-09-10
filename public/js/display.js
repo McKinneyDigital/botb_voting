@@ -47,7 +47,7 @@ $(function() {
 				'month': 	0,
 				'year': 	0,
 				'hour': 	0,
-				'min': 		1,
+				'min': 		10,
 				'sec': 		0
 			}, omitWeeks: true,
 			onComplete: function() { 
@@ -57,9 +57,6 @@ $(function() {
 			}
 		});
 	}
-	
-	
-	
 	
   $('.ended').hide();
 

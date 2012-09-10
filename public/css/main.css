@@ -41,12 +41,17 @@ body {
 	background-color: rgba(0,255,0,0);
 	top: 200px;
 }
+#countdown-wrapper {
+	position: absolute;
+	top: 80px;
+	width: 100%;
+}
 #countdown { 
-	margin: 80px auto 0 auto;
+	margin: 0 auto;
 	overflow: hidden;
 	width: 315px; 
 	height: 150px;
-	display: none;
+	display: block;
 }
 .digit-block {
 	float: left;
