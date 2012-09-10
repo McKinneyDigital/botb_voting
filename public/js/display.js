@@ -53,6 +53,7 @@ $(function() {
 			onComplete: function() { 
 				current_status = "off";
 				$("#countdown").css("display","none");
+				$('.ended').show();
 			}
 		});
 	}
