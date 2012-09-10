@@ -51,7 +51,7 @@ body {
 	overflow: hidden;
 	width: 315px; 
 	height: 150px;
-	display: block;
+	display: none;
 }
 .digit-block {
 	float: left;
