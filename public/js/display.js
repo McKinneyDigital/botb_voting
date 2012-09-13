@@ -14,7 +14,10 @@
   var beak_position = "closed";
   var difference = 0;
 	var count = 1;
-
+	
+	function randomNum (min, max) {
+	    return Math.floor(Math.random() * (max - min + 1)) + min;
+	}
 
 	function toggleBeak() {
 		if(beak_position == "closed"){
@@ -64,15 +67,31 @@
 	$.each( $('.spot'), function() {
 		$(this).animate( { opacity: 0 }, 0);
 	});
+	$.each( $('.lightning'), function() {
+		$(this).animate( { opacity: 0 }, 0);
+	});
+	
 	var timer = setInterval(function() {
 	
+		// Spotlights change
+		
 		$('#spot_' + count.toString()).animate( { opacity: 0 }, 1000);
 		count++;
 		if( count > 3 ) count = 1;
 		$('#spot_' + count.toString()).animate( { opacity: 1 }, 1000);
-	
-	
-	
+		
+		// Lighting crash
+		
+		var rand = randomNum(1,5);
+		var offset = randomNum(600,2000)
+		$('#lightning_' + rand.toString()).delay(offset).animate( { opacity: 0.8 }, 50, function() {
+			$(this).animate( { opacity: 0 }, 50, function() { 
+				$(this).animate( { opacity: 0.8 }, 100, function() { 
+					$(this).delay(randomNum(100,300)).animate( { opacity: 0 }, 100, function() { } );
+				});
+			});
+		});
+		
 	
     $.ajax({
       type: 'GET',
